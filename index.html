@@ -6,6 +6,17 @@
   <style>
   #content {
      text-align: center;
+     height: 100%;
+     vertical-align: middle;
+    display: flex;
+    flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  }
+
+ .emoji {
+    padding: 10px 10px;
+    display: inline-block;
   }
   
   #example3 {
@@ -24,8 +35,88 @@
 
 <div id="content">
 
-<div id="emoji-sweat" class="" >
-<img src="img/emoji-sweat.png" id="emoji-sweat-img"  width='150px' data-src="img/emoji-sweat.png"  data-poke="img/emoji-smiling.svg" >
+<div class="emoji" >
+<img src="img/emoji-sweat.png" class="emoji-img"  width='150px' data-src="img/emoji-sweat.png"  data-poke="img/emoji-cool.svg" >
+</div>
+
+<div class="emoji"  >
+<img src="img/emoji-sweat.png" class="emoji-img"  width='150px' data-src="img/emoji-sweat.png"  data-poke="img/emoji-smiling.svg" >
+</div>
+
+<div class="emoji"  >
+<img src="img/emoji-sweat.png" class="emoji-img"  width='150px' data-src="img/emoji-sweat.png"  data-poke="img/emoji-smiling.svg" >
+</div>
+
+<div class="emoji"  >
+<img src="img/emoji-sweat.png" class="emoji-img"  width='150px' data-src="img/emoji-sweat.png"  data-poke="img/emoji-smiling.svg" >
+</div>
+
+<div class="emoji"  >
+<img src="img/emoji-sweat.png" class="emoji-img"  width='150px' data-src="img/emoji-sweat.png"  data-poke="img/emoji-smiling.svg" >
+</div>
+
+<div class="emoji"  >
+<img src="img/emoji-sweat.png" class="emoji-img"  width='150px' data-src="img/emoji-sweat.png"  data-poke="img/emoji-smiling.svg" >
+</div>
+
+<div class="emoji"  >
+<img src="img/emoji-sweat.png" class="emoji-img"  width='150px' data-src="img/emoji-sweat.png"  data-poke="img/emoji-smiling.svg" >
+</div>
+
+<div class="emoji"  >
+<img src="img/emoji-sweat.png" class="emoji-img"  width='150px' data-src="img/emoji-sweat.png"  data-poke="img/emoji-smiling.svg" >
+</div>
+
+<div class="emoji"  >
+<img src="img/emoji-sweat.png" class="emoji-img"  width='150px' data-src="img/emoji-sweat.png"  data-poke="img/emoji-smiling.svg" >
+</div>
+
+<div class="emoji"  >
+<img src="img/emoji-sweat.png" class="emoji-img"  width='150px' data-src="img/emoji-sweat.png"  data-poke="img/emoji-smiling.svg" >
+</div>
+
+<div class="emoji"  >
+<img src="img/emoji-sweat.png" class="emoji-img"  width='150px' data-src="img/emoji-sweat.png"  data-poke="img/emoji-smiling.svg" >
+</div>
+
+<div class="emoji"  >
+<img src="img/emoji-sweat.png" class="emoji-img"  width='150px' data-src="img/emoji-sweat.png"  data-poke="img/emoji-smiling.svg" >
+</div>
+
+<div class="emoji"  >
+<img src="img/emoji-sweat.png" class="emoji-img"  width='150px' data-src="img/emoji-sweat.png"  data-poke="img/emoji-smiling.svg" >
+</div>
+
+<div class="emoji"  >
+<img src="img/emoji-sweat.png" class="emoji-img"  width='150px' data-src="img/emoji-sweat.png"  data-poke="img/emoji-smiling.svg" >
+</div>
+
+<div class="emoji"  >
+<img src="img/emoji-sweat.png" class="emoji-img"  width='150px' data-src="img/emoji-sweat.png"  data-poke="img/emoji-smiling.svg" >
+</div>
+
+<div class="emoji"  >
+<img src="img/emoji-sweat.png" class="emoji-img"  width='150px' data-src="img/emoji-sweat.png"  data-poke="img/emoji-smiling.svg" >
+</div>
+
+<div class="emoji"  >
+<img src="img/emoji-sweat.png" class="emoji-img"  width='150px' data-src="img/emoji-sweat.png"  data-poke="img/emoji-smiling.svg" >
+</div>
+
+<div class="emoji"  >
+<img src="img/emoji-sweat.png" class="emoji-img"  width='150px' data-src="img/emoji-sweat.png"  data-poke="img/emoji-big-smile.svg" >
+</div>
+
+<div class="emoji"  >
+<img src="img/emoji-sweat.png" class="emoji-img"  width='150px' data-src="img/emoji-sweat.png"  data-poke="img/emoji-big-smile.svg" >
+</div>
+
+<div class="emoji"  >
+<img src="img/emoji-sweat.png" class="emoji-img"  width='150px' data-src="img/emoji-sweat.png"  data-poke="img/emoji-big-smile.svg" >
+</div>
+
+<div class="emoji"  >
+<img src="img/emoji-sweat.png" class="emoji-img"  width='150px' data-src="img/emoji-sweat.png"  data-poke="img/emoji-big-smile.svg" >
 </div>
 
 
@@ -80,12 +171,32 @@ $("#btn-stop").on('click', function(e) {
    $('#example3').removeClass('animated infinite shake');
 });
 
-$('#emoji-sweat-img').on('click', function(e) {
-       $('#emoji-sweat-img').attr('src', $('#emoji-sweat-img').data("poke"));
-			$('#emoji-sweat-img').removeClass('animated infinite bounce');
+
+var arrEmoji = [
+   'emoji-big-smile.svg',
+   'emoji-cool.svg',
+   'emoji-smiling.svg',
+   'emoji-thinking.svg',
+   '500px-Emoji_u1f923.svg.png',
+   '1000px-Emoji_u1f604.svg.png',
+   '500px-Noto_Emoji_KitKat_1f60c.svg.png'
+];
+
+$('.emoji-img').each(function(i, obj) {
+   var randomChoice = arrEmoji[~~(Math.random() * arrEmoji.length)]
+   console.log(obj);
+   $(obj).data("poke", 'img/'+randomChoice);
+});
+
+$('.emoji-img').on('click', function(e) {
+       console.log(e);
+       var t = e.currentTarget;
+       console.log(t);
+       $(t).attr('src', $(t).data("poke"));
+			$(t).removeClass('animated infinite bounce');
 		window.setTimeout( function(e) {
 			
-					$('#emoji-sweat-img').attr('src', $('#emoji-sweat-img').data("src"));
+					$(t).attr('src', $(t).data("src"));
 
 		}, 1000 ); // 5 seconds
 
